@@ -2,7 +2,7 @@
 echo "init..."
 pkg update -y && pkg upgrade -y
 pkg i tsu python3 git apksigner openssl -y
-pip install apkutils
+#pip install apkutils
 git clone https://github.com/dgbaodev2407/roblox
 cd roblox && sudo python /data/data/com.termux/files/home/roblox/installer.py
 if [ $? -eq 0 ]; then
@@ -11,4 +11,4 @@ else
     echo "Lệnh sudo thất bại."
 fi
 echo "done"
-reboot
+sudo reboot
