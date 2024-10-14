@@ -16,7 +16,7 @@ def wm(cmd, value):
 	return call(f"wm {cmd} {value}")
 def dpi(dpi):
 	dpi = str(dpi)
-	wm("density", dpi)
+	return wm("density", dpi)
 def settings(cmd, partition, key, value = ""):
 	cmd, partition, key, value = str(cmd), str(partition), str(key), str(value)
 	r = ""
