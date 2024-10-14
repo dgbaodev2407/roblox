@@ -6,7 +6,9 @@ if __import__("os").geteuid() != 0:
 sleep = time.sleep
 def call(x):
 	x = str(x)
-	return __import__("subprocess").run(x.strip(), shell=True, capture_output=True, text=True).stdout.strip()
+	r = __import__("subprocess").run(x.strip(), shell=True, capture_output=True,
+	text=True)
+	return r.stdout.strip() if len(r.stdout.strip()) > 1 else r.stderr.strip()
 def pm(cmd, value):
 	cmd, value = str(cmd), str(value)
 	return call(f"pm {cmd} {value}")
@@ -27,7 +29,7 @@ def uninstaller(package):
 	return pm("uninstall", package)
 def dpi(value):
 	value = str(value)
-	return wm("density", value)
+	return wm("smallest_width", value)
 def init_dev():
 	print("Setting ...")
 	print("Set DPI: "+dpi(700))
