@@ -54,7 +54,7 @@ def init_dev():
 	print("Done")
 	sleep(3)
 print("Path: " + call("pwd"))
-__import__("os").system("curl -o \"" + realpath("Delta.pack") + "\" https://github.com/dgbaodev2407/roblox/releases/download/Roblox-Delta-Pack/Delta.pack")
+__import__("os").system("wget -O \"" + realpath("Delta.pack") + "\" https://github.com/dgbaodev2407/roblox/releases/download/Roblox-Delta-Pack/Delta.pack")
 print("Installing....")
 init_dev()
 print("Installing Apps...")
