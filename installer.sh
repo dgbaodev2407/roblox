@@ -10,3 +10,4 @@ else
     echo "Lệnh sudo thất bại."
 fi
 echo "done"
+
