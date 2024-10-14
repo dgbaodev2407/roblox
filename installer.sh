@@ -1,7 +1,7 @@
 #!/bin/bash
 echo "init..."
 pkg update -y && pkg upgrade -y
-pkg i tsu python3 git apksigner openssl -y
+pkg i tsu python3 git openssl -y
 #pip install apkutils
 git clone https://github.com/dgbaodev2407/roblox
 cd roblox && sudo python /data/data/com.termux/files/home/roblox/installer.py
