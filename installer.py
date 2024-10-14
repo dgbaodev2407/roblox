@@ -37,6 +37,7 @@ def init_dev():
 	print("Bật cửa sổ dạng tự do: "+settings("put", "global", "enable_freeform_support", 1))
 	print("Done")
 	sleep(3)
+print("Path: " + call("pwd"))
 print("Installing....")
 init_dev()
 print("Installing Apps...")
