@@ -17,7 +17,13 @@ def wm(cmd, value):
 	return call(f"wm {cmd} {value}")
 def settings(cmd, partition, key, value = ""):
 	cmd, partition, key, value = str(cmd), str(partition), str(key), str(value)
-	return call(f"settings {cmd} {partition} {key} {value}")
+	r = ""
+	if partition == "all":
+		r += call(f"settings --user 0 {cmd} system {key} {value}")
+		r += call(f"settings --user 0 {cmd} secure {key} {value}")
+		r += call(f"settings --user 0 {cmd} global {key} {value}")
+		return r 
+	else: return call(f"settings --user 0 {cmd} {partition} {key} {value}")
 def realpath(path):
 	path = str(path)
 	return call(f"realpath \"/data/data/com.termux/files/home/roblox/{path}\"")
@@ -29,15 +35,15 @@ def uninstaller(package):
 	return pm("uninstall", package)
 def init_dev():
 	print("Setting ...")
-	print("Set smallest_width DPI: "+settings("put", "system", "smallest_width", 700))
-	print("Set Cài đặt nhà phát triển: "+settings("put", "global", "development_settings_enabled", 1))
-	print("Set Buộc các hoạt động có thể thay đổi kích thước: "+settings("put", "global", "development_force_resizable_activities", 1))
-	print("Set Bật cửa sổ dạng tự do: "+settings("put", "global", "enable_freeform_support", 1))
+	print("Set Cài đặt nhà phát triển: "+settings("put", "all", "development_settings_enabled", 1))
+	print("Set smallest_width DPI: "+settings("put", "all", "smallest_width", 700))
+	print("Set Buộc các hoạt động có thể thay đổi kích thước: "+settings("put", "all", "development_force_resizable_activities", 1))
+	print("Set Bật cửa sổ dạng tự do: "+settings("put", "all", "enable_freeform_support", 1))
 	print("Done")
-	print("Info smallest_width DPI: "+settings("get", "system", "smallest_width"))
-	print("Info Cài đặt nhà phát triển: "+settings("get", "global", "development_settings_enabled"))
-	print("Info Buộc các hoạt động có thể thay đổi kích thước: "+settings("get", "global", "development_force_resizable_activities"))
-	print("Info Bật cửa sổ dạng tự do: "+settings("get", "global", "enable_freeform_support"))
+	print("Info Cài đặt nhà phát triển: "+settings("get", "all", "development_settings_enabled"))
+	print("Info smallest_width DPI: "+settings("get", "all", "smallest_width"))
+	print("Info Buộc các hoạt động có thể thay đổi kích thước: "+settings("get", "all", "development_force_resizable_activities"))
+	print("Info Bật cửa sổ dạng tự do: "+settings("get", "all", "enable_freeform_support"))
 	sleep(3)
 print("Path: " + call("pwd"))
 print("Installing....")
@@ -50,4 +56,3 @@ while int(clone) not in range(1,11): clone = input("Nhập số lượng clone c
 for i in range(int(clone)):
 	print(f"Delta Clone {i+1}: " + installer("\"" + realpath(f"Delta-{i}.pack") + "\""))
 print("Done")
-call("reboot")
