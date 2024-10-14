@@ -29,12 +29,12 @@ def uninstaller(package):
 	return pm("uninstall", package)
 def init_dev():
 	print("Setting ...")
-	print("Set smallest_width DPI: "+settings("put", "global", "smallest_width", 700))
+	print("Set smallest_width DPI: "+settings("put", "system", "smallest_width", 700))
 	print("Set Cài đặt nhà phát triển: "+settings("put", "global", "development_settings_enabled", 1))
 	print("Set Buộc các hoạt động có thể thay đổi kích thước: "+settings("put", "global", "development_force_resizable_activities", 1))
 	print("Set Bật cửa sổ dạng tự do: "+settings("put", "global", "enable_freeform_support", 1))
 	print("Done")
-	print("Info smallest_width DPI: "+settings("get", "global", "smallest_width"))
+	print("Info smallest_width DPI: "+settings("get", "system", "smallest_width"))
 	print("Info Cài đặt nhà phát triển: "+settings("get", "global", "development_settings_enabled"))
 	print("Info Buộc các hoạt động có thể thay đổi kích thước: "+settings("get", "global", "development_force_resizable_activities"))
 	print("Info Bật cửa sổ dạng tự do: "+settings("get", "global", "enable_freeform_support"))
@@ -50,3 +50,4 @@ while int(clone) not in range(1,11): clone = input("Nhập số lượng clone c
 for i in range(int(clone)):
 	print(f"Delta Clone {i+1}: " + installer("\"" + realpath(f"Delta-{i}.pack") + "\""))
 print("Done")
+call("reboot")
