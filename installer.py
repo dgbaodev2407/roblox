@@ -4,7 +4,8 @@ if __import__("os").geteuid() != 0:
 	print("Need Root !")
 	quit()
 sleep = time.sleep
-def call(x): x = str(x)
+def call(x):
+	x = str(x)
 	return __import__("subprocess").run(x.strip(), shell=True, capture_output=True, text=True).stdout.strip()
 def pm(cmd, value):
 	cmd, value = str(cmd), str(value)
