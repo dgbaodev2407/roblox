@@ -3,7 +3,7 @@ echo "init..."
 pkg update -y && pkg upgrade -y
 pkg i tsu python3 git -y
 git clone https://github.com/dgbaodev2407/roblox
-cd roblox && sudo python $(realpath installer.py)
+cd roblox && sudo python $(realpath roblox/installer.py)
 if [ $? -eq 0 ]; then
     echo "Lệnh sudo chạy thành công."
 else
