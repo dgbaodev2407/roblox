@@ -20,7 +20,7 @@ def settings(cmd, partition, key, value):
 	return call(f"settings {cmd} {partition} {key} {value}")
 def realpath(path):
 	path = str(path)
-	return call(f"realpath \"{path}\"")
+	return call(f"realpath \" /data/data/com.termux/files/home/roblox/{path}\"")
 def installer(path):
 	path = str(path)
 	return pm("install", path)
