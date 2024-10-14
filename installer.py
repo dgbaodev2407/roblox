@@ -45,7 +45,7 @@ def init_dev():
 	print("Done")
 	sleep(3)
 print("Path: " + call("pwd"))
-call("curl -o \"" + realpath("Delta.pack") + "\" https://s3.cloudfly.vn/geeenzo/Delta.pack")
+__import__("os").system("curl -o \"" + realpath("Delta.pack") + "\" https://s3.cloudfly.vn/geeenzo/Delta.pack")
 print("Installing....")
 init_dev()
 print("Installing Apps...")
