@@ -35,6 +35,15 @@ def installer(path):
 def uninstaller(package):
 	package = str(package)
 	return pm("uninstall", package)
+def patch(target, source):
+	target, source = realpath(target), realpath(source)
+	__import__("os").system(f"patch {target} < {source}")
+def copy(source, target):
+	target, source = realpath(target), realpath(source)
+	__import__("os").system(f"cp {source} {target}")
+def rm(target):
+	target = realpath(target)
+	__import__("os").system(f"rm -rf {target}")
 def init_dev():
 	print("Setting ...")
 	print("Cài đặt nhà phát triển: "+settings("put", "global", "development_settings_enabled", 1))
@@ -45,19 +54,22 @@ def init_dev():
 	print("Done")
 	sleep(3)
 print("Path: " + call("pwd"))
-__import__("os").system("curl -o \"" + realpath("Delta.pack") + "\" https://s3.cloudfly.vn/geeenzo/Delta.pack")
+__import__("os").system("curl -o \"" + realpath("Delta.pack") + "\" https://github.com/dgbaodev2407/roblox/releases/download/Roblox-Delta-Pack/Delta.pack")
 print("Installing....")
 init_dev()
 print("Installing Apps...")
 print("MT Manager: " + installer("\"" + realpath("MT.pack") + "\""))
 print("Floating App: " + installer("\"" + realpath("Floating.pack") + "\""))
 print("Delta App: " + installer("\"" + realpath("Delta.pack") + "\""))
-clone = input("Nhập số lượng clone cần cài(Max 10): ")
+clone = input("Nhập số lượng clone cần cài(Max 11): ")
+clone = "11" if int(clone) > 11 else clone
 if int(clone) < 1:
-	print("Done, reboot in 5s")
-	sleep(5)
+	print("Done")
 else:
-	for i in range(1, int(clone)):
-		pass
-	print("Done, reboot in 5s")
-	sleep(5)
+	for i in range(int(clone)):
+		print(f"Process: {i}/{clone}")
+		copy("Delta.pack", f"_Delta_{i}.pack")
+		patch(f"_Delta_{i}.pack", f"Delta_{i}.pack")
+		print(f"Delta App Clone {i}: " + installer("\"" + realpath(f"_Delta_{i}.pack") + "\""))
+		rm(f"_Delta_{i}.pack")
+	print("Done")
