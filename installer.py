@@ -15,27 +15,29 @@ def pm(cmd, value):
 def wm(cmd, value):
 	cmd, value = str(cmd), str(value)
 	return call(f"wm {cmd} {value}")
-def settings(cmd, partition, key, value):
+def settings(cmd, partition, key, value = ""):
 	cmd, partition, key, value = str(cmd), str(partition), str(key), str(value)
 	return call(f"settings {cmd} {partition} {key} {value}")
 def realpath(path):
 	path = str(path)
-	return call(f"realpath \" /data/data/com.termux/files/home/roblox/{path}\"")
+	return call(f"realpath \"/data/data/com.termux/files/home/roblox/{path}\"")
 def installer(path):
 	path = str(path)
 	return pm("install", path)
 def uninstaller(package):
 	package = str(package)
 	return pm("uninstall", package)
-def dpi(value):
-	value = str(value)
-	return wm("smallest_width", value)
 def init_dev():
 	print("Setting ...")
-	print("Set DPI: "+dpi(700))
-	print("Buộc các hoạt động có thể thay đổi kích thước: "+settings("put", "global", "development_force_resizable_activities", 1))
-	print("Bật cửa sổ dạng tự do: "+settings("put", "global", "enable_freeform_support", 1))
+	print("Set smallest_width DPI: "+settings("put", "global", "smallest_width", 700))
+	print("Set Cài đặt nhà phát triển: "+settings("put", "global", "development_settings_enabled", 1))
+	print("Set Buộc các hoạt động có thể thay đổi kích thước: "+settings("put", "global", "development_force_resizable_activities", 1))
+	print("Set Bật cửa sổ dạng tự do: "+settings("put", "global", "enable_freeform_support", 1))
 	print("Done")
+	print("Info smallest_width DPI: "+settings("get", "global", "smallest_width"))
+	print("Info Cài đặt nhà phát triển: "+settings("get", "global", "development_settings_enabled"))
+	print("Info Buộc các hoạt động có thể thay đổi kích thước: "+settings("get", "global", "development_force_resizable_activities"))
+	print("Info Bật cửa sổ dạng tự do: "+settings("get", "global", "enable_freeform_support"))
 	sleep(3)
 print("Path: " + call("pwd"))
 print("Installing....")
