@@ -80,11 +80,11 @@ def display():
 	uied = range(k, i)
 	print("-1 : quit")
 	c = int(input("Change >> "))
-	if c in installed:
+	if c in range(k):
 		print("Calling Remove App...")
 		uninstaller(installed[c])
 		input("OK, Back")
-	elif c in notinstalled:
+	elif c in range(k, i):
 		print("Calling install App...")
 		pack = installed[c-k]
 		copy("Delta.pack", "_"+pack+".pack")
