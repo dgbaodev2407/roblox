@@ -1,4 +1,4 @@
-#!/bin/python3
+#!/bin/python
 import time
 if __import__("os").geteuid() != 0:
 	print("Need Root !")
@@ -40,7 +40,7 @@ def patch(target, source):
 	__import__("os").system(f"patch {target} < {source}")
 def copy(source, target):
 	target, source = realpath(target), realpath(source)
-	__import__("os").system(f"cp {source} {target}")
+	__import__("os").system(f"cp -rf {source} {target}")
 def rm(target):
 	target = realpath(target)
 	__import__("os").system(f"rm -rf {target}")
@@ -52,7 +52,6 @@ def init_dev():
 	print("Buộc các hoạt động có thể thay đổi kích thước: "+settings("put", "all", "force_resizable_activities", 1))
 	print("Bật cửa sổ dạng tự do: "+settings("put", "global", "enable_freeform_support", 1))
 	print("Done")
-	sleep(3)
 print("Path: " + call("pwd"))
 __import__("os").system("wget -O \"" + realpath("Delta.pack") + "\" https://github.com/dgbaodev2407/roblox/releases/download/Roblox-Delta-Pack/Delta.pack")
 print("Installing....")
@@ -73,3 +72,5 @@ else:
 		print(f"Delta App Clone {i}: " + installer("\"" + realpath(f"_Delta_{i}.pack") + "\""))
 		rm(f"_Delta_{i}.pack")
 	print("Done")
+print("Reboot in 5s")
+sleep(5)
