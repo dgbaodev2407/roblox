@@ -46,7 +46,7 @@ def rm(target):
 	__import__("os").system(f"rm -rf {target}")
 def listall():
 	r = []
-	for i in "abcdefghijk":
+	for i in "abcdefghijkt":
 		r.append("com.roblox.clien"+i)
 	return r
 def listinstalled():
@@ -86,7 +86,7 @@ def display():
 		input("OK, Back")
 	elif c in range(k, i):
 		print("Calling install App...")
-		pack = installed[c-k]
+		pack = notinstalled[c-k]
 		copy("Delta.pack", "_"+pack+".pack")
 		patch(f"_{pack}.pack", f"{pack}.pack")
 		installer("\"" + realpath(f"_{pack}.pack") + "\"")
