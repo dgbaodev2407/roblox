@@ -66,11 +66,11 @@ if int(clone) < 1:
 	print("Done")
 else:
 	for i in range(int(clone)):
-		print(f"Process: {i}/{clone}")
 		copy("Delta.pack", f"_Delta_{i}.pack")
 		patch(f"_Delta_{i}.pack", f"Delta_{i}.pack")
 		print(f"Delta App Clone {i}: " + installer("\"" + realpath(f"_Delta_{i}.pack") + "\""))
 		rm(f"_Delta_{i}.pack")
+		print(f"Process: {i+1}/{clone}")
 	print("Done")
 print("Reboot in 5s")
 sleep(5)

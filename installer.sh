@@ -29,11 +29,11 @@ mv roblox/Delta_10.pack roblox/com.roblox.clienk.pack
 mv roblox /data/data/com.termux/files/usr/roblox
 echo "#!/bin/bash" > /data/data/com.termux/files/usr/bin/clone
 echo "sudo python /data/data/com.termux/files/usr/roblox/manager.py" >> /data/data/com.termux/files/usr/bin/clone
-echo "if [ \$? -eq 0 ]; then" > /data/data/com.termux/files/usr/bin/clone
-echo "	echo OK" > /data/data/com.termux/files/usr/bin/clone
-echo "else" > /data/data/com.termux/files/usr/bin/clone
-echo "	echo Lệnh sudo thất bại." > /data/data/com.termux/files/usr/bin/clone
-echo "fi" > /data/data/com.termux/files/usr/bin/clone
+#echo "if [ \$? -eq 0 ]; then" > /data/data/com.termux/files/usr/bin/clone
+#echo "	echo OK" > /data/data/com.termux/files/usr/bin/clone
+#echo "else" > /data/data/com.termux/files/usr/bin/clone
+#echo "	echo Lệnh sudo thất bại." > /data/data/com.termux/files/usr/bin/clone
+#echo "fi" > /data/data/com.termux/files/usr/bin/clone
 
 chmod +x /data/data/com.termux/files/usr/bin/clone
 if [ $? -eq 0 ]; then
