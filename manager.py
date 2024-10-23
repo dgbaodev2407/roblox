@@ -7,7 +7,7 @@ sleep = time.sleep
 def call(x):
 	x = str(x)
 	r = __import__("subprocess").run(x.strip(), shell=True, capture_output=True, text=True)
-	return r.stdout.strip() if len(r.stdout.strip()) > 1 else r.stderr.strip()
+	return r.stdout.strip() if len(r.stdout.strip()) > 0 else r.stderr.strip()
 def pm(cmd, value):
 	cmd, value = str(cmd), str(value)
 	return call(f"pm {cmd} {value}")
@@ -15,7 +15,7 @@ def wm(cmd, value):
 	cmd, value = str(cmd), str(value)
 	return call(f"wm {cmd} {value}")
 def dpi(dpi):
-	dpi = str(dpi)
+	dpi = str((1358 - int(dpi))//4)
 	return wm("density", dpi)
 def settings(cmd, partition, key, value = ""):
 	cmd, partition, key, value = str(cmd), str(partition), str(key), str(value)
@@ -73,12 +73,12 @@ def display():
 		i += 1
 	ied = range(i)
 	k = i
-	print("uninstalled: ")
+	print("Uninstalled: ")
 	for a in notinstalled:
 		print(f"{i} : [Uninstalled] {a}")
 		i += 1
 	uied = range(k, i)
-	print("-1 : quit")
+	print("\n-1 : quit")
 	c = int(input("Change >> "))
 	if c in range(k):
 		print("Calling Remove App...")

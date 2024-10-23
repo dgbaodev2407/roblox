@@ -7,7 +7,7 @@ sleep = time.sleep
 def call(x):
 	x = str(x)
 	r = __import__("subprocess").run(x.strip(), shell=True, capture_output=True, text=True)
-	return r.stdout.strip() if len(r.stdout.strip()) > 1 else r.stderr.strip()
+	return r.stdout.strip() if len(r.stdout.strip()) > 0 else r.stderr.strip()
 def pm(cmd, value):
 	cmd, value = str(cmd), str(value)
 	return call(f"pm {cmd} {value}")
@@ -15,7 +15,7 @@ def wm(cmd, value):
 	cmd, value = str(cmd), str(value)
 	return call(f"wm {cmd} {value}")
 def dpi(dpi):
-	dpi = str(dpi)
+	dpi = str((1358 - int(dpi))//4)
 	return wm("density", dpi)
 def settings(cmd, partition, key, value = ""):
 	cmd, partition, key, value = str(cmd), str(partition), str(key), str(value)
@@ -47,7 +47,7 @@ def rm(target):
 def init_dev():
 	print("Setting ...")
 	print("Cài đặt nhà phát triển: "+settings("put", "global", "development_settings_enabled", 1))
-	print("smallest_width DPI: "+dpi(164))
+	print("smallest_width DPI: "+dpi(702))
 	print("Buộc các hoạt động có thể thay đổi kích thước(dev): "+settings("put", "all", "development_force_resizable_activities", 1))
 	print("Buộc các hoạt động có thể thay đổi kích thước: "+settings("put", "all", "force_resizable_activities", 1))
 	print("Bật cửa sổ dạng tự do: "+settings("put", "global", "enable_freeform_support", 1))
@@ -66,11 +66,11 @@ if int(clone) < 1:
 	print("Done")
 else:
 	for i in range(int(clone)):
+		print(f"Process: {i}/{clone}")
 		copy("Delta.pack", f"_Delta_{i}.pack")
 		patch(f"_Delta_{i}.pack", f"Delta_{i}.pack")
 		print(f"Delta App Clone {i}: " + installer("\"" + realpath(f"_Delta_{i}.pack") + "\""))
 		rm(f"_Delta_{i}.pack")
-		print(f"Process: {i+1}/{clone}")
 	print("Done")
 print("Reboot in 5s")
 sleep(5)
