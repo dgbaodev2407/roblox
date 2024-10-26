@@ -2,6 +2,7 @@
 git clone https://github.com/dgbaodev2407/roblox
 rm -rf /data/data/com.termux/files/usr/roblox
 cd
+wget -O roblox/Delta.pack https://github.com/dgbaodev2407/roblox/releases/download/Roblox-Delta-Pack/Delta.pack
 mv roblox/Delta_0.pack roblox/com.roblox.cliena.pack
 mv roblox/Delta_1.pack roblox/com.roblox.clienb.pack
 mv roblox/Delta_2.pack roblox/com.roblox.clienc.pack
