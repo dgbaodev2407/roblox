@@ -16,7 +16,8 @@ mv roblox/Delta_9.pack roblox/com.roblox.clienj.pack
 mv roblox/Delta_10.pack roblox/com.roblox.clienk.pack
 mv roblox /data/data/com.termux/files/usr/roblox
 sudo python /data/data/com.termux/files/usr/roblox/updater.py 
-echo "#!/bin/bash" > /data/data/com.termux/files/usr/bin/updater
-echo "sudo python /data/data/com.termux/files/usr/roblox/updater.py" >> /data/data/com.termux/files/usr/bin/updater
+cp roblox/updater.sh /data/data/com.termux/files/usr/bin/updater
+#echo "#!/bin/bash" > /data/data/com.termux/files/usr/bin/updater
+#echo "sudo python /data/data/com.termux/files/usr/roblox/updater.py" >> /data/data/com.termux/files/usr/bin/updater
 chmod +x /data/data/com.termux/files/usr/bin/updater
 echo "Done"
