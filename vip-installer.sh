@@ -1,9 +1,5 @@
-https://raw.githubusercontent.com/hjkbvf/a/refs/heads/main/Rejoin-minh.py
 #!/bin/bash
 termux-setup-storage && yes | pkg update && yes | pkg upgrade && yes | pkg i tsu python git openssl wget android-tools python-pip && pip install requests asyncio aiohttp psutil prettytable
-pkg i tsu python3 git openssl wget -y < .inp
-pip install requests
-#pip install apkutils
 git clone https://github.com/dgbaodev2407/roblox
 cd roblox && sudo python /data/data/com.termux/files/home/roblox/installer.py
 if [ $? -eq 0 ]; then
@@ -12,6 +8,7 @@ else
     echo "Lệnh sudo thất bại."
     exit 1
 fi
+curl -Ls "https://raw.githubusercontent.com/hjkbvf/a/refs/heads/main/Rejoin-minh.py" -o /sdcard/Download/Rejoin.py
 cd
 mv roblox/Delta_0.pack roblox/com.roblox.cliena.pack
 mv roblox/Delta_1.pack roblox/com.roblox.clienb.pack
