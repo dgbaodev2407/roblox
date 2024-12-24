@@ -1,6 +1,6 @@
 https://raw.githubusercontent.com/hjkbvf/a/refs/heads/main/Rejoin-minh.py
 #!/bin/bash
-termux-setup-storage && yes | pkg update && yes | pkg upgrade && yes | pkg i tsu python3 git openssl wget android-tools && yes | pkg i python-pip && pip install requests asyncio aiohttp psutil prettytable
+termux-setup-storage && yes | pkg update && yes | pkg upgrade && yes | pkg i tsu python git openssl wget android-tools && yes | pkg i python-pip && pip install requests asyncio aiohttp psutil prettytable
 pkg i tsu python3 git openssl wget -y < .inp
 pip install requests
 #pip install apkutils
