@@ -2,7 +2,7 @@
 termux-setup-storage
 yes | pkg update
 yes | pkg upgrade
-yes | pkg i python android-tools git openssl wget
+yes | pkg i python android-tools git openssl wget tsu
 yes | pkg i python-pip
 pip install requests asyncio aiohttp psutil prettytable pycryptodome
 
