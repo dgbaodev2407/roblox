@@ -4,7 +4,7 @@ yes | pkg update
 yes | pkg upgrade
 yes | pkg i python android-tools git openssl wget tsu
 yes | pkg i python-pip
-pip install requests asyncio aiohttp psutil prettytable pycryptodome
+pip install requests asyncio aiohttp psutil prettytable pycryptodome wget
 
 if [ -e "roblox" ]; then
 	rm -rf roblox
