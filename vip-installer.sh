@@ -5,6 +5,10 @@ yes | pkg upgrade
 yes | pkg i python android-tools git openssl wget tsu
 yes | pkg i python-pip
 pip install requests asyncio aiohttp psutil prettytable pycryptodome
+
+if [ -e "roblox" ]; then
+	rm -rf roblox
+fi
 git clone https://github.com/dgbaodev2407/roblox
 cd roblox && sudo python /data/data/com.termux/files/home/roblox/installer.py
 if [ $? -eq 0 ]; then
