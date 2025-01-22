@@ -1,4 +1,7 @@
 #!/bin/bash
+if [ -e "roblox" ]; then
+	rm -rf roblox
+fi
 git clone https://github.com/dgbaodev2407/roblox
 rm -rf /data/data/com.termux/files/usr/roblox
 cd
