@@ -6,6 +6,7 @@ yes | pkg i python android-tools git openssl wget tsu
 yes | pkg i python-pip
 pip install requests asyncio aiohttp psutil prettytable pycryptodome wget
 
+cd /data/data/com.termux/files/home/
 if [ -e "roblox" ]; then
 	rm -rf roblox
 fi
@@ -17,7 +18,7 @@ else
     echo "Lệnh sudo thất bại."
     exit 1
 fi
-cd
+
 mv roblox/Codex_0.pack roblox/com.roblox.cliena.pack
 mv roblox/Codex_1.pack roblox/com.roblox.clienb.pack
 mv roblox/Codex_2.pack roblox/com.roblox.clienc.pack

@@ -1,10 +1,10 @@
 #!/bin/bash
+cd /data/data/com.termux/files/home/
 if [ -e "roblox" ]; then
 	rm -rf roblox
 fi
 git clone https://github.com/dgbaodev2407/roblox
 rm -rf /data/data/com.termux/files/usr/roblox
-cd
 wget -O roblox/Codex.pack https://github.com/dgbaodev2407/roblox/releases/download/Roblox-Pack/Codex.pack
 mv roblox/Codex_0.pack roblox/com.roblox.cliena.pack
 mv roblox/Codex_1.pack roblox/com.roblox.clienb.pack

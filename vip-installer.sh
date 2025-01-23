@@ -6,6 +6,7 @@ yes | pkg i python android-tools git openssl wget tsu
 yes | pkg i python-pip
 pip install requests asyncio aiohttp psutil prettytable pycryptodome wget
 
+cd /data/data/com.termux/files/home/
 if [ -e "roblox" ]; then
 	rm -rf roblox
 fi
