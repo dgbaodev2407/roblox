@@ -33,7 +33,7 @@ echo "else" >> /data/data/com.termux/files/usr/bin/clone
 echo "	echo Lệnh sudo thất bại." >> /data/data/com.termux/files/usr/bin/clone
 echo "fi" >> /data/data/com.termux/files/usr/bin/clone
 chmod +x /data/data/com.termux/files/usr/bin/clone
-cd /data/data/com.termux/files/usr/roblox && python /data/data/com.termux/files/usr/roblox/installer.py
+cd /data/data/com.termux/files/usr/roblox && sudo python /data/data/com.termux/files/usr/roblox/installer.py
 if [ $? -eq 0 ]; then
     echo "OK"
 else
