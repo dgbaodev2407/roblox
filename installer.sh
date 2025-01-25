@@ -23,7 +23,6 @@ mv roblox/Codex_9.pack roblox/com.roblox.clieni.pack
 mv roblox/Codex_10.pack roblox/com.roblox.clienj.pack
 cp roblox/updater.sh /data/data/com.termux/files/usr/bin/updater
 chmod +x /data/data/com.termux/files/usr/bin/updater
-wget "https://raw.githubusercontent.com/hjkbvf/a/refs/heads/main/Rejoin-minh.py" -O roblox/Rejoin.py
 mv roblox /data/data/com.termux/files/usr/roblox
 echo "#!/bin/bash" > /data/data/com.termux/files/usr/bin/clone
 echo "sudo python /data/data/com.termux/files/usr/roblox/manager.py" >> /data/data/com.termux/files/usr/bin/clone
