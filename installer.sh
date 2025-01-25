@@ -40,3 +40,4 @@ else
     echo "Lệnh sudo thất bại."
     exit 1
 fi
+sudo reboot
