@@ -10,6 +10,11 @@ cd /data/data/com.termux/files/home/
 if [ -e "roblox" ]; then
 	rm -rf roblox
 fi
+if [ -e "/data/data/com.termux/files/usr/roblox" ]; then
+    rm -rf /data/data/com.termux/files/usr/roblox
+fi
+mkdir -p /data/data/com.termux/files/usr/roblox
+
 git clone https://github.com/dgbaodev2407/roblox
 wget -O roblox/com.roblox.cliena.pack https://github.com/dgbaodev2407/roblox/releases/download/Roblox-Pack/Roblox_1.pack
 mv roblox/Roblox_2.pack roblox/com.roblox.clienb.pack
