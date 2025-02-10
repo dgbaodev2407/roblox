@@ -20,6 +20,6 @@ mv roblox/Roblox_9.pack roblox/com.roblox.clieni.pack
 mv roblox/Roblox_10.pack roblox/com.roblox.clienj.pack
 cp roblox/updater.sh /data/data/com.termux/files/usr/bin/updater
 chmod +x /data/data/com.termux/files/usr/bin/updater
-mv roblox /data/data/com.termux/files/usr/roblox
+mv roblox /data/data/com.termux/files/usr/
 cd /data/data/com.termux/files/usr/roblox && sudo python /data/data/com.termux/files/usr/roblox/updater.py
 echo "Done"

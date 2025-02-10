@@ -27,7 +27,7 @@ mv roblox/Roblox_9.pack roblox/com.roblox.clieni.pack
 mv roblox/Roblox_10.pack roblox/com.roblox.clienj.pack
 cp roblox/updater.sh /data/data/com.termux/files/usr/bin/updater
 chmod +x /data/data/com.termux/files/usr/bin/updater
-mv roblox /data/data/com.termux/files/usr/roblox
+mv roblox /data/data/com.termux/files/usr/
 echo "#!/bin/bash" > /data/data/com.termux/files/usr/bin/clone
 echo "sudo python /data/data/com.termux/files/usr/roblox/manager.py" >> /data/data/com.termux/files/usr/bin/clone
 echo "if [ \$? -eq 0 ]; then" >> /data/data/com.termux/files/usr/bin/clone
