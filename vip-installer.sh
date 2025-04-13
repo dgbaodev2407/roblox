@@ -18,7 +18,7 @@ git clone https://github.com/dgbaodev2407/roblox
 
 curl -Ls "https://raw.githubusercontent.com/hjkbvf/a/refs/heads/main/Rejoin-minh.py" -o /sdcard/Download/Rejoin.py
 
-cd /data/data/com.termux/files/usr/roblox && sudo python /data/data/com.termux/files/usr/roblox/tools.py
+cd /data/data/com.termux/files/home/roblox && sudo python /data/data/com.termux/files/home/roblox/tools.py
 err=$?
 if [ $err -eq 0 ]; then
     echo "OK"
