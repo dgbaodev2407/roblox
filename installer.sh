@@ -16,7 +16,7 @@ fi
 
 git clone https://github.com/dgbaodev2407/roblox
 
-cd /data/data/com.termux/files/usr/roblox && sudo python /data/data/com.termux/files/usr/roblox/tools.py
+cd /data/data/com.termux/files/home/roblox && sudo python /data/data/com.termux/files/home/roblox/tools.py
 err=$?
 if [ $err -eq 0 ]; then
     echo "OK"
