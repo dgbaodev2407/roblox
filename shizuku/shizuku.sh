@@ -8,3 +8,5 @@ install -Dm400 ./rish_shizuku.dex "$PREFIX/bin/rish_shizuku.dex"
 
 mv "$PREFIX/bin/su" "$PREFIX/bin/superuser"
 ln -ds "$PREFIX/bin/rish" "$PREFIX/bin/su"
+
+cd -
