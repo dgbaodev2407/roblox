@@ -11,3 +11,10 @@ rm -rf "$HOME/bin/su"
 ln -ds "$HOME/bin/dsuperuser" "$HOME/bin/su"
 
 echo "export PATH=\"$HOME/bin:$PREFIX/bin:\$PATH\"" >> "$HOME/.bashrc"
+
+source "$HOME/.bashrc"
+
+dsuperuser --help
+
+echo
+echo "Cài đặt hoàn tất!"
