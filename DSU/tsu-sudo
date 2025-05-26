@@ -95,7 +95,7 @@ if [[ "$_TSU_AS_SUDO" == true ]]; then
 		case $arg in
 		-u | --user)
 			echo "Failed to switch user with tsu sudo."
-			echo "Please use `dsuperuser sudo -u USER commands` instead."
+			echo "Please use \`dsuperuser sudo -u USER commands\` instead."
 			exit 1
 			shift
 			shift
