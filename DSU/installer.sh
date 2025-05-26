@@ -14,11 +14,9 @@ ln -ds "$HOME/bin/dsuperuser" "$HOME/bin/sudo"
 
 echo "export PATH=\"$HOME/bin:$PREFIX/bin:\$PATH\"" >> "$HOME/.bashrc"
 
-PATH="$HOME/bin:$PATH"
+PATH="$HOME/bin:$PREFIX/bin:$PATH"
 
 # source "$HOME/.bashrc"
-
-sudo "mount -o remount,rw / && echo 'export PATH=\"$HOME/bin:\$PATH\"' >> .bashrc && mount -o remount,ro /"
 
 echo
 
