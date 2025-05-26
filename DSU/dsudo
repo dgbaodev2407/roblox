@@ -50,11 +50,10 @@ show_usage_sudo() {
 	cat <<"EOF"
 sudo - run commands as root or another user 
   usage: sudo command 
-  usage: sudo [-E] [-u USER] command 
+  usage: sudo [-E] command 
 
     Options:
       -E          Preserve environment variables from the current shell.
-      -u USER 	Switch to USER instead of root..
 EOF
 }
 
@@ -95,7 +94,9 @@ if [[ "$_TSU_AS_SUDO" == true ]]; then
 
 		case $arg in
 		-u | --user)
-			SWITCH_USER="$2"
+			echo "Failed to switch user with tsu sudo."
+			echo "Please use `dsuperuser sudo -u USER commands` instead."
+			exit 1
 			shift
 			shift
 			;;
