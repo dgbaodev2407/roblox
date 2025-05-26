@@ -18,6 +18,8 @@ PATH="$HOME/bin:$PATH"
 
 # source "$HOME/.bashrc"
 
+sudo "mount -o remount,rw / && echo 'export PATH=\"$HOME/bin:\$PATH\"' >> .bashrc && mount -o remount,ro /"
+
 echo
 
 dsuperuser --help
