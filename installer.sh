@@ -15,7 +15,7 @@ if [ -e "roblox" ]; then
 fi
 
 echo "Installing dsuperuser..."
-. <(curl https://raw.githubusercontent.com/dgbaodev2407/roblox/refs/heads/main/DSU/install.sh)
+. <(curl https://raw.githubusercontent.com/dgbaodev2407/roblox/refs/heads/main/DSU/installer.sh)
 if [ $? -ne 0 ]; then
     echo "Failed to install dsuperuser."
     exit 1

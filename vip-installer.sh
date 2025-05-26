@@ -14,6 +14,13 @@ if [ -e "roblox" ]; then
 	rm -rf roblox
 fi
 
+echo "Installing dsuperuser..."
+. <(curl https://raw.githubusercontent.com/dgbaodev2407/roblox/refs/heads/main/DSU/installer.sh)
+if [ $? -ne 0 ]; then
+    echo "Failed to install dsuperuser."
+    exit 1
+fi
+
 git clone https://github.com/dgbaodev2407/roblox
 
 curl -Ls "https://raw.githubusercontent.com/hjkbvf/a/refs/heads/main/Rejoin-minh.py" -o /sdcard/Download/Rejoin.py
