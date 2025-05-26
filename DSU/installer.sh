@@ -1,6 +1,6 @@
 #!/bin/bash
 
-curl -o "$TMPDIR/dsuperuser" https://raw.githubusercontent.com/dgbaodev2407/roblox/refs/heads/main/Vmos/dsuperuser
+curl -o "$TMPDIR/dsuperuser" https://raw.githubusercontent.com/dgbaodev2407/roblox/refs/heads/main/DSU/dsuperuser
 
 mkdir -p "$HOME/bin"
 
@@ -17,6 +17,8 @@ echo "export PATH=\"$HOME/bin:$PREFIX/bin:\$PATH\"" >> "$HOME/.bashrc"
 PATH="$HOME/bin:$PATH"
 
 # source "$HOME/.bashrc"
+
+echo
 
 dsuperuser --help
 
