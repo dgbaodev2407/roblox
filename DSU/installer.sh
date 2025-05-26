@@ -14,7 +14,7 @@ ln -ds "$HOME/bin/dsuperuser" "$HOME/bin/sudo"
 
 echo "export PATH=\"$HOME/bin:$PREFIX/bin:\$PATH\"" >> "$HOME/.bashrc"
 
-PATH="$HOME/bin:$PREFIX/bin:$PATH"
+export PATH="$HOME/bin:$PREFIX/bin:$PATH"
 
 # source "$HOME/.bashrc"
 
