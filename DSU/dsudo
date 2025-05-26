@@ -259,14 +259,16 @@ else
 	STARTUP_SCRIPT="$ROOT_SHELL"
 fi
 
-SU_BINARY_SEARCH=("/system/xbin/su" "/system/bin/su" "/su/bin/su" "/data/data/com.termux/files/home/bin/su" "/data/data/com.termux/files/home/bin/dsuperuser sudo")
+SU_BINARY_SEARCH=("/data/data/com.termux/files/home/bin/su" "/data/data/com.termux/files/home/bin/dsuperuser sudo")
+
+SKIP_SBIN=1
 
 # On some systems with other root methods `/sbin` is inacessible.
-if [[ -x "/sbin" ]]; then
-	SU_BINARY_SEARCH+=("/sbin/su" "/sbin/bin/su")
-else
-	SKIP_SBIN=1
-fi
+# if [[ -x "/sbin" ]]; then
+# 	SU_BINARY_SEARCH+=("/sbin/su" "/sbin/bin/su")
+# else
+# 	SKIP_SBIN=1
+# fi
 
 # Unset all Termux LD_* enviroment variables to prevent symbols missing , dlopen()ing of wrong libs.
 if [[ -n "$ENVIRONMENT_PRESERVE" ]]; then
