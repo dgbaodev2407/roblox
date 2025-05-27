@@ -5,7 +5,7 @@ fi
 termux-setup-storage
 yes | pkg update
 yes | pkg upgrade
-yes | pkg i python android-tools git openssl wget tsu xdelta3
+yes | pkg i python android-tools git openssl wget xdelta3
 yes | pkg i python-pip
 pip install requests asyncio aiohttp psutil prettytable pycryptodome wget
 
