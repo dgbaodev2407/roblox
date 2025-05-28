@@ -14,12 +14,12 @@ if [ -e "roblox" ]; then
 	rm -rf roblox
 fi
 
-echo "Installing dsuperuser..."
-. <(curl https://raw.githubusercontent.com/Roblox-Project-202X/DSuperUser/refs/heads/main/installer.sh)
-if [ $? -ne 0 ]; then
-    echo "Failed to install dsuperuser."
-    exit 1
-fi
+# echo "Installing dsuperuser..."
+# . <(curl https://raw.githubusercontent.com/Roblox-Project-202X/DSuperUser/refs/heads/main/installer.sh)
+# if [ $? -ne 0 ]; then
+#     echo "Failed to install dsuperuser."
+#     exit 1
+# fi
 
 git clone https://github.com/dgbaodev2407/roblox
 
