@@ -3,8 +3,8 @@ if [ -e "/data/data/com.termux/files/home/storage" ]; then
 	rm -rf /data/data/com.termux/files/home/storage
 fi
 termux-setup-storage
-. <(curl https://raw.githubusercontent.com/u400822/setup-termux/refs/heads/main/termux-change-repo.sh)
 yes | pkg update
+. <(curl https://raw.githubusercontent.com/u400822/setup-termux/refs/heads/main/termux-change-repo.sh)
 yes | pkg upgrade
 yes | pkg i python android-tools git openssl wget xdelta3
 yes | pkg i python-pip
